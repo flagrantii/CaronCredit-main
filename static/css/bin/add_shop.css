@@ -1,0 +1,122 @@
+/* From add_shop.css */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background-color: #f0f0f0; */
+}
+
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.container {
+    margin-top: 40px;
+}
+
+#user_shops_list {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+#user_shops_list h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#user_shops_list ul {
+    list-style: none;
+    padding: 0;
+}
+
+#user_shops_list li {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#user_shops_list li:hover {
+    background-color: #f0f0f0;
+}
+
+#add_shop_form {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    height: 165px;
+    text-align: center;
+}
+
+#add_shop_form label {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#add_shop_form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+#add_shop_form input[type="submit"] {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#add_shop_form input[type="submit"]:hover {
+    background-color: #333;
+}
+
+#error_message {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+#success_message {
+    color: green;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+a:hover {
+    color: #333;
+}
+
+.add-shop-btn {
+    margin-top: -20px;
+}

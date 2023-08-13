@@ -1,0 +1,512 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Default setting */
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: #000;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    text-decoration-color: #000;
+}
+
+a,
+button[type="button"]:hover {
+    cursor: pointer;
+}
+
+/* Container */
+.container {
+    position: relative;
+    width: 100%;
+    height: max-content;
+}
+
+/* Nav bar */
+#navbar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 25px;
+    background-color: transparent;
+    box-shadow: #00000025 0px 4px 4px 0px;
+    font-family: 'Prompt', sans-serif;
+    z-index: 998;
+    color: #000;
+
+    &>div {
+        position: relative;
+        /* width: 50%; */
+        display: flex;
+        align-items: center;
+    }
+}
+
+.logo-group {
+    display: flex;
+    flex-wrap: wrap;
+
+    & h2.coala {
+        font-size: 28px;
+        font-weight: 800;
+        letter-spacing: .04rem;
+        margin: 0;
+    }
+}
+
+
+ul.nav-link {
+    display: flex;
+    list-style: none;
+    text-transform: uppercase;
+}
+
+ul.nav-link li {
+    padding-block: 5px;
+    padding-inline: clamp(12px, 1.8vw, 35px);
+
+    & a {
+        color: #000;
+        letter-spacing: .1rem;
+        font-weight: 600;
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+
+li#sign-in {
+    padding-inline: clamp(12px, 2vw, 35px);
+    background-color: #000;
+    width: max-content;
+
+    & a {
+        color: #fff;
+    }
+}
+
+input[type="text"] {
+    padding: 5px;
+}
+
+#search-bar {
+    position: relative;
+    height: 34px;
+    width: 220px;
+    max-width: 280px;
+    margin-right: 25px;
+    background-color: #d9d9d9;
+    border: none;
+    border-radius: 5px;
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+}
+
+/* Starting user-dropdown */
+/* .user-dropdown {
+    position: relative;
+    z-index: 999;
+}
+
+.user-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: #00000025 3px 7px 5px 0;
+    display: none;
+
+    &.show {
+            display: block;
+        }
+
+}
+
+.user-dropdown.active .user-menu {
+    display: block;
+}
+
+.user-menu li {
+    padding: 8px 15px;
+    list-style: none;
+}
+
+.user-menu li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.user-menu li a:hover {
+    background-color: #f0f0f0;
+} */
+/* End user-dropdown */
+
+.UCC-group {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 35px;
+    align-items: center;
+}
+
+.user-icon,
+.cart-icon,
+.store-icon,
+.chat-icon {
+    position: relative;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #000;
+
+    &>* {
+        font-size: 38px;
+    }
+}
+
+.notification {
+    position: absolute;
+    top: -8px;
+    right: -15px;
+
+    font-family: 'Prompt', sans-serif;
+    font-size: 10px;
+    padding: 3px;
+    border-radius: 50%;
+    text-align: center;
+    width: 22px;
+    aspect-ratio: 1/1;
+    color: #fff;
+    background-color: #F4380E;
+}
+
+#chat-icon {
+    color: inherit;
+    color: #000;
+    text-decoration: none;
+}
+
+#cart-icon {
+    color: inherit;
+    color: #000;
+    text-decoration: none;
+}
+
+/* My shop drop down */
+/* .shop-dropdown {
+    position: relative;
+}
+
+.shop-dropdown>ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.shop-dropdown>a {
+    display: block;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+} */
+
+/* .shop-dropdown>a:hover {
+    background-color: #f0f0f0;
+}
+
+.shop-dropdown-menu {
+    position: absolute;
+    top: 60%;
+    left: -80%;
+    z-index: 999;
+    display: none;
+    width: 150px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.shop-dropdown-menu.show {
+    display: block;
+}
+
+.shop-dropdown-menu li {
+    padding: 8px 16px;
+    list-style: none;
+}
+
+.shop-dropdown-menu li a {
+    color: #000;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.shop-dropdown-menu li a:hover {
+    background-color: #f0f0f0;
+}
+
+.shop-dropdown.active .shop-dropdown-menu {
+    display: block;
+} */
+
+/* Adjustments for the shop drop-down text */
+/* .shop-dropdown a {
+    display: block;
+    white-space: nowrap; /* Prevent the text from wrapping */
+/* } */
+
+/* Add some spacing between drop-down menus */
+/* .user-menu,
+.shop-dropdown-menu {
+    margin-top: 10px;
+} */
+
+/* Oak My shop drop down */
+
+.user-menu {
+    padding-top: 17px;
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: -126px;
+    width: max-content;
+    padding-bottom: 5px;
+    border-radius: 8px;
+
+    cursor: default;
+
+    &.show {
+        display: block;
+    }
+}
+
+.user-icon-btn {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.user-menu {
+    padding-top: 17px;
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: -126px;
+    width: max-content;
+    padding-bottom: 5px;
+    border-radius: 8px;
+
+    cursor: default;
+
+    &.show {
+        display: block;
+    }
+}
+
+.drop-down {
+    padding: 5px 20px;
+    font-size: 16px;
+    background-color: #eee;
+
+    &:hover {
+        background-color: #d9d9d9;
+    }
+
+    &:last-child {
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+}
+
+.drop-down a {
+    color: #000;
+}
+
+#switch-account {
+    position: relative;
+}
+
+.account-menu {
+    display: none;
+    position: absolute;
+    left: -127px;
+    padding-block: 8px;
+    background-color: #eee;
+    border-radius: 8px;
+    top: -8px;
+
+    #switch-account:is(:hover, :active) & {
+        display: block;
+    }
+
+    & .current-profile {
+        color: #fff;
+        background-color: royalblue;
+    }
+}
+
+.profile-dropdown {
+    padding: 5px 20px;
+    background-color: #eee;
+
+    &:not(.current-profile):hover {
+        cursor: pointer;
+        background-color: #d9d9d9;
+    }
+}
+
+.profile-dropdown>div {
+    width: fit-content;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3px;
+
+    & img {
+        width: 30px;
+    }
+}
+
+.drop-down {
+    padding: 5px 20px;
+    font-size: 16px;
+    background-color: #eee;
+
+    &:hover {
+        background-color: #d9d9d9;
+    }
+
+    &:last-child {
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+}
+
+.drop-down a {
+    color: #000;
+}
+
+#switch-account {
+    position: relative;
+}
+
+.account-menu {
+    display: none;
+    position: absolute;
+    left: -127px;
+    padding-block: 8px;
+    background-color: #eee;
+    border-radius: 8px;
+    top: -8px;
+
+    #switch-account:is(:hover, :active) & {
+        display: block;
+    }
+
+    & .current-profile {
+        color: #fff;
+        background-color: royalblue;
+    }
+}
+
+.user-icon-btn {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-dropdown {
+    padding: 5px 20px;
+    background-color: #eee;
+
+    &:not(.current-profile):hover {
+        cursor: pointer;
+        background-color: #d9d9d9;
+    }
+}
+
+.profile-dropdown>div {
+    width: fit-content;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3px;
+
+    & img {
+        width: 30px;
+    }
+}
+
+li {
+    list-style: none;
+}
+
+li img {
+    width: 30px;
+    height: 30px;
+}
+
+li p {
+    margin: 0;
+}
+
+h2 {
+    color: #000;
+}

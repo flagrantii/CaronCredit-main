@@ -1,0 +1,139 @@
+{% extends "nav.html" %}
+
+{% block title %}
+Profile
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="/static/css/profile.css">
+
+<!-- Container -->
+<div class="container">
+    <!-- Profile -->
+    <div class="profile">
+        <!-- Aside -->
+        <div class="aside">
+            <div class="user-profile">
+                <div class="user-icon">
+                    <i class='bx bxs-user-circle'></i>
+                </div>
+                <div>
+                    <h2 class="username">Username</h2>
+                    <h3 class="user-id">ID: 9999999</h2>
+                </div>
+            </div>
+            <ul class="profile-list">
+                <li class="select-list current-list">My Account</li>
+                <!-- <li class="select-list">Add Profile</li> -->
+                {% if isShop==0%}
+                <li class="select-list">Purchase History</li>
+                {% else %}
+
+                {% endif %}
+
+            </ul>
+        </div>
+        <!-- Aside -->
+
+        <!-- Main content -->
+        <div class="main-content">
+            <!-- My account -->
+            <div class="my-account current-content">
+                {% if isShop == 0 %}
+
+                <div class="user-info">
+                    <form id="edit-user-profile-form" action="#" method="POST">
+                        <table class="account-data">
+                            <tr>
+                                <th><label for="username">Username:</label></th>
+                                <td class="user-data"><input type="text" id="username" name="username" value="Username" disabled></td>
+                            </tr>
+                            <!-- <tr>
+                                <th>Account ID :</th>
+                                <td class="user-data">9999999</td>
+                            </tr> -->
+                            <tr>
+                                <th><label for="password">Password:</label></th>
+                                <td class="user-data"><input type="password" id="password" name="password" value="Password" disabled></td>
+                            </tr>
+                            <tr>
+                                <th><label for="email">Email:</label></th>
+                                <td class="user-data"><input type="email" id="email" name="email" value="Email" disabled></td>
+                            </tr>
+                            <tr>
+                                <th><label for="firstname">Firstname:</label></th>
+                                <td class="user-data"><input type="text" id="firstname" name="firstname" value="Firstname" disabled></td>
+                            </tr>
+                            <tr>
+                                <th><label for="lastname">Lastname:</label></th>
+                                <td class="user-data"><input type="text" id="lastname" name="lastname" value="Lastname" disabled></td>
+                            </tr>
+                        </table>
+                        <button type="submit" id="submit-user-profile" class="hidden">Save</button>
+                    </form>
+                        <button type="button" id="edit-profile-btn">Edit Profile</button>
+                </div>
+
+                {% else %}
+
+                <div class="user-info">
+                    <form id="edit-shop-profile-form" action="#" method="POST">
+                        <table class="account-data">
+                            <tr>
+                                <th><label for="shop-name">Shop name:</label></th>
+                                <td class="user-data"><input type="text" id="shop-name" name="shop-name" value="Shop name" disabled></td>
+                            </tr>
+                        </table>
+                        <button type="submit" id="submit-user-profile" class="hidden">Save</button>
+                    </form>
+                
+                    <button type="button" id="edit-profile-btn">Edit Profile</button>
+                </div>
+
+                {% endif %}
+
+                <div class="profile-img">
+                    <div class="profile-img-wrapper">
+                        <img src="https://storage.googleapis.com/carboncredit/coalla_logo.png" alt="Profile Image" id="profile-image">
+                        <div class="overlay">
+                            <span id="upload-text">Upload Image</span>
+                        </div>
+                    </div>
+                    <input type="file" name="profile-img-upload" id="profile-img-upload" accept="image/*" style="display: none;">
+                </div>
+            </div>
+            <!-- My account -->
+
+
+
+            <!-- Purchase history -->
+            <div class="purchase-history" id="purchase-history">
+
+                <div class="status-btn-group">
+                    <button type="button" class="status-btn current-status">All</button>
+                    <button type="button" class="status-btn">To Pay</button>
+                    <button type="button" class="status-btn">Complete</button>
+                    <button type="button" class="status-btn">Cancelled</button>
+                </div>
+
+                <!-- Status order -->
+                <div class="status-order-group" id="status-order-group">
+                    <!-- order-history -->
+
+                    
+                    <!-- order-history -->
+                </div>
+                <!-- Status order -->
+            </div>
+            <!-- Purchase History -->
+        </div>
+        <!-- Main content -->
+
+    </div>
+    <!-- Profile -->
+</div>
+<!-- Container -->
+
+
+<script src="/static/js/profile.js"></script>
+{% endblock %}

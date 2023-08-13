@@ -1,0 +1,50 @@
+{% extends "nav.html" %}
+
+{% block titile %}
+Checkout
+{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="/static/css/checkout.css">
+
+<div class="container">
+    <div class="cart" id="cart">
+        <div class="cart-header cart-table-row">
+            <div class="product-detail">
+                <div class="checkout-header">
+                    <h1 class="check-out">Check Out</h1>
+                    <h1 class="column-header">Product Ordered</h1>
+                </div>
+            </div>
+            <div class="price-per-item">
+                <h1 class="column-header">Price Per Item</h1>
+            </div>
+            <div class="amount-header">
+                <h1 class="column-header">Amount</h1>
+            </div>
+            <div class="conclude-head">
+                <h1 class="column-header">Sub Total</h1>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="footer">
+        <h2 class="product-price">Product Price : <span>0</span> THB</h2>
+        <h3 class="cc-support">Carbon Credit support : <span>0</span> THB</h3>
+        <h4 class="total-order">Order total: <span>0</span> THB</h4>
+        <button type="button" class="purchase-btn" id="purchase-btn">Purchase</button>
+    </div>
+</div>
+
+<script src="/static/js/checkout.js"></script>
+
+<script>
+    const productSelected = {{ checkoutData | tojson }};
+    fetchSelectedProduct(productSelected)
+    purchase(productSelected)
+</script>
+
+{% endblock %}

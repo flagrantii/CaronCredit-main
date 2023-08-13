@@ -1,0 +1,228 @@
+{% extends "nav.html" %}
+
+{% block title %}
+Main page
+{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+
+<div class="container">
+    <div class="slide-show-wrapper">
+        <div class="dialogue">
+            Checkout Successfully!
+        </div>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img id="slide-1" src="/static/image/Preview-slideShow/5.png" alt="..">
+                </div>
+                <div class="swiper-slide">
+                    <img id="slide-2" src="/static/image/Preview-slideShow/1.png" alt="..">
+                </div>
+                <div class="swiper-slide">
+                    <img id="slide-3" src="/static/image/Preview-slideShow/2.png" alt="..">
+                </div>
+                <div class="swiper-slide">
+                    <img id="slide-4" src="/static/image/Preview-slideShow/3.png" alt="..">
+                </div>
+                <div class="swiper-slide">
+                    <img id="slide-5" src="/static/image/Preview-slideShow/4.png" alt=".." >
+                </div>
+            </div>
+
+            <div class="swiper-pagination"></div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+
+    <div class="about-cc">
+        <h1 class="about-cc-header">
+            About Carbon Credit
+        </h1>
+        <div class="about-cc-group">
+            <div class="about-cc-content">
+                <h2 class="number"><span id="number-cc">3000</span> KgCO2e</h2>
+                <h3 class="number-caption">Retail carbon credit Traded</h3>
+            </div>
+            <div class="about-cc-content">
+                <h2 class="number"><span id="cost-cc">430K+</span> THB</h2>
+                <h3 class="number-caption">Retail carbon credit Cost</h3>
+            </div>
+            <!-- <div class="about-cc-content">
+                <h2 class="number"><span>N</span> Product</h2>
+                <h3 class="number-caption">Clothe Volume</h3>
+            </div> -->
+            <div class="about-cc-content">
+                <h2 class="number"><span id="cost-product">N*300</span> THB</h2>
+                <h3 class="number-caption">Cost Clothes Volume</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="recommend">
+        <h2 class="recommend-header">Recommend Designs</h2>
+        <div class="t-shirt-group">
+            <div class="t-shirt">
+                <div class="shirt-img-wrapper">
+                    <img src="/static/image/t-shirt.png" alt="T-shirt-preview">
+                </div>
+                <div class="product-desc">
+                    <h1 class="product-name">Product Name</h1>
+                    <h2 class="shop-name">By Tanuson</h2>
+                    <div class="category-group">
+                        <span class="category">V-shirt</span>
+                        <span class="category">Short</span>
+                        <span class="category">White</span>
+                        <span class="category">Street Fasion</span>
+                        <span class="category">Oversized</span>
+                        <span class="category">Velvet</span>
+                    </div>
+                    <h3 class="price"><span>350 - 450</span> THB</h3>
+                    <div class="star-group">
+                        <div class="star">00000</div>
+                        <span class="user-rating">4,789 +</span>
+                    </div>
+
+                    <button type="button" class="add-btn">Add +</button>
+                </div>
+            </div>
+            <div class="t-shirt">
+                <div class="shirt-img-wrapper">
+                    <img src="/static/image/t-shirt.png" alt="T-shirt-preview">
+                </div>
+                <div class="product-desc">
+                    <h1 class="product-name">Product Name</h1>
+                    <h2 class="shop-name">By Tanuson</h2>
+                    <div class="category-group">
+                        <span class="category">V-shirt</span>
+                        <span class="category">Short</span>
+                        <span class="category">White</span>
+                        <span class="category">Street Fasion</span>
+                        <span class="category">Oversized</span>
+                        <span class="category">Velvet</span>
+                    </div>
+                    <h3 class="price"><span>350 - 450</span> THB</h3>
+                    <div class="star-group">
+                        <div class="star">00000</div>
+                        <span class="user-rating">4,789 +</span>
+                    </div>
+
+                    <button type="button" class="add-btn">Add +</button>
+                </div>
+            </div>
+            <div class="t-shirt">
+                <div class="shirt-img-wrapper">
+                    <img src="/static/image/t-shirt.png" alt="T-shirt-preview">
+                </div>
+                <div class="product-desc">
+                    <h1 class="product-name">Product Name</h1>
+                    <h2 class="shop-name">By Tanuson</h2>
+                    <div class="category-group">
+                        <span class="category">V-shirt</span>
+                        <span class="category">Short</span>
+                        <span class="category">White</span>
+                        <span class="category">Street Fasion</span>
+                        <span class="category">Oversized</span>
+                        <span class="category">Velvet</span>
+                    </div>
+                    <h3 class="price"><span>350 - 450</span> THB</h3>
+                    <div class="star-group">
+                        <div class="star">00000</div>
+                        <span class="user-rating">4,789 +</span>
+                    </div>
+
+                    <button type="button" class="add-btn">Add +</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="recommend">
+        <h2 class="recommend-header">Recommend Shop</h2>
+        <div class="t-shirt-group">
+            <div class="t-shirt">
+                <div class="shirt-img-wrapper">
+                    <img src="/static/image/t-shirt.png" alt="T-shirt-preview">
+                </div>
+                <div class="product-desc">
+                    <h1 class="product-name">Product Name</h1>
+                    <h2 class="shop-name">By Tanuson</h2>
+                    <div class="category-group">
+                        <span class="category">V-shirt</span>
+                        <span class="category">Short</span>
+                        <span class="category">White</span>
+                        <span class="category">Street Fasion</span>
+                        <span class="category">Oversized</span>
+                        <span class="category">Velvet</span>
+                    </div>
+                    <h3 class="price"><span>350 - 450</span> THB</h3>
+                    <div class="star-group">
+                        <div class="star">00000</div>
+                        <span class="user-rating">4,789 +</span>
+                    </div>
+
+                    <button type="button" class="add-btn">Add +</button>
+                </div>
+            </div>
+            <div class="t-shirt">
+                <div class="shirt-img-wrapper">
+                    <img src="/static/image/t-shirt.png" alt="T-shirt-preview">
+                </div>
+                <div class="product-desc">
+                    <h1 class="product-name">Product Name</h1>
+                    <h2 class="shop-name">By Tanuson</h2>
+                    <div class="category-group">
+                        <span class="category">V-shirt</span>
+                        <span class="category">Short</span>
+                        <span class="category">White</span>
+                        <span class="category">Street Fasion</span>
+                        <span class="category">Oversized</span>
+                        <span class="category">Velvet</span>
+                    </div>
+                    <h3 class="price"><span>350 - 450</span> THB</h3>
+                    <div class="star-group">
+                        <div class="star">00000</div>
+                        <span class="user-rating">4,789 +</span>
+                    </div>
+
+                    <button type="button" class="add-btn">Add +</button>
+                </div>
+            </div>
+            <div class="t-shirt">
+                <div class="shirt-img-wrapper">
+                    <img src="/static/image/t-shirt.png" alt="T-shirt-preview">
+                </div>
+                <div class="product-desc">
+                    <h1 class="product-name">Product Name</h1>
+                    <h2 class="shop-name">By Tanuson</h2>
+                    <div class="category-group">
+                        <span class="category">V-shirt</span>
+                        <span class="category">Short</span>
+                        <span class="category">White</span>
+                        <span class="category">Street Fasion</span>
+                        <span class="category">Oversized</span>
+                        <span class="category">Velvet</span>
+                    </div>
+                    <h3 class="price"><span>350 - 450</span> THB</h3>
+                    <div class="star-group">
+                        <div class="star">00000</div>
+                        <span class="user-rating">4,789 +</span>
+                    </div>
+
+                    <button type="button" class="add-btn">Add +</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script src="/static/js/main.js"></script>
+{% endblock %}

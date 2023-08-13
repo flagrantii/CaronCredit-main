@@ -1,0 +1,319 @@
+{% extends "nav.html" %}
+
+{% block title %}
+Product
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="/static/css/product.css">
+<link rel="stylesheet" type="text/css" href="/static/css/review.css">
+
+<div class="container">
+    <div class="product">
+        <div class="dialogue">
+            Add To Cart Successfully!
+        </div>
+        
+        <div class="product-preview" id="tshirt-div">
+            <div id="tshirt-node">
+                <img id="tshirt-img" src="/static/image/background_tshirt.png" style="background-color: #fff;" alt="T-shirt-Preview">
+                <div id="drawingArea" class="drawing-area">
+                    <div class="canvas-container">
+                        <canvas id="tshirt-canvas" width="150" height="350"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Product-info -->
+
+        <div class="product-info option-part current-part" id="stage-1">
+            <h1 class="product-name">Product Name</h1>
+            <h2 class="shop-name">By Tanuson</h2>
+            <h3 class="product-about">
+                A classic and versatile wardrobe staple, this cotton T-shirt offers unbeatable comfort and breathability. Crafted from
+                100% natural cotton fibers, it provides a soft and smooth texture against the skin, making it ideal for everyday wear.
+                Whether you're heading to the gym or just relaxing with friends, this cotton T-shirt will keep you cool and comfortable
+                throughout the day.
+            </h3>
+            <div class="tags">
+                <span class="tag">Tags: </span>
+                <div class="category-group">
+                    <span class="category">V-shirt</span>
+                    <span class="category">Short</span>
+                    <span class="category">White</span>
+                    <span class="category">Street Fasion</span>
+                    <span class="category">Oversized</span>
+                    <span class="category">Velvet</span>
+                </div>
+            </div>
+            <!-- <button type="button" id="add-btn">Add +</button> -->
+        </div>
+        <!-- Product-info -->
+
+        <div class="shirt-option">
+            <!-- Design Part -->
+            <div class="option-part" id="stage-2">
+                <h4 class="progress"><span>Step 1 of 3</span> : Product Design</h4>
+                <h1 class="product-name">Product Name</h1>
+
+                <!-- <label for="design-upload">Upload your own design:</label> -->
+                <input type="file" name="design-upload" id="design-upload" class="design-upload">
+            
+                <div class="color-dropdown"  id="dropdown-color">
+                    <div class="select" id="tshirt-design">
+                        <span>White</span>
+                    </div>
+                    <input type="hidden" name="color">
+                    <ul class="color-dropdown-menu">
+                            <li class="color-option" id="red" value="#fff">
+                                White
+                            </li>
+                            <li class="color-option" id="red" value="#f00">
+                                Red
+                            </li>
+                            <li class="color-option" id="blue" value="#0000FF">
+                                Blue
+                            </li>
+                            <li class="color-option" id="black" value="#000">Black
+                            </li>
+                    </ul>
+                </div>
+
+                <!-- <button type="button" id="design-upload-btn">Upload your own design</button>
+                <button type="button" id="downloadButton">Download you own design</button> -->
+                
+            </div>
+            <!-- Design Part -->
+
+            <form id="shirt-option-form" action="/order" method="post">
+                <!-- Form: Part 1 -->
+                <div class="option-part " id="stage-3">
+                    <h4 class="progress"><span>Step 2 of 3</span> : Product Design</h4>
+                    <h1 class="product-name">Product Name</h1>
+                    <div class="input-row-group">
+                        <span class="option-name">Fabric</span>
+                        <!-- <div class="radio-group">
+                            <input type="radio" name="fabric" value="Cotton" id="fabric-Cotton">
+                            <label for="fabric-Cotton" class="radio-label">Cotton</label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" name="fabric" value="Polyester" id="fabric-Polyester">
+                            <label for="fabric-Polyester" class="radio-label">Polyester</label>
+                        </div> -->
+                    </div>
+                    <div class="input-row-group">
+                        <span class="option-name">Neckline</span>
+                        <!-- <div class="radio-group">
+                            <input type="radio" name="neckline" value="Crew-neck" id="neckline-Crew">
+                            <label for="neckline-Crew" class="radio-label">Crew neck</label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" name="neckline" value="V-neck" id="neckline-V">
+                            <label for="neckline-V" class="radio-label">V-neck</label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" name="neckline" value="Scoop-neck" id="neckline-Scoop">
+                            <label for="neckline-Scoop" class="radio-label">Scoop neck</label>
+                        </div> -->
+                    </div>
+                    <div class="input-row-group">
+                        <span class="option-name">Sleeve length</span>
+                        <!-- <div class="radio-group">
+                            <input type="radio" name="sleeve" value="Sleeveless" id="sleeve-Less">
+                            <label for="sleeve-Less" class="radio-label">Sleeveless</label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" name="sleeve" value="Short-sleeves" id="sleeve-Short">
+                            <label for="sleeve-Short" class="radio-label">Short sleeves</label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" name="sleeve" value="Long-sleeves" id="sleeve-Long">
+                            <label for="sleeve-Long" class="radio-label">Long sleeves</label>
+                        </div> -->
+                    </div>
+                    <div class="input-row-group">
+                        <span class="option-name">Fit</span>
+                        <!-- <div class="radio-group">
+                            <input type="radio" name="fit" value="Slim-fit" id="fit-Slim">
+                            <label for="fit-Slim" class="radio-label">Slim fit</label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" name="fit" value="Regular-fit" id="fit-Regular">
+                            <label for="fit-Regular" class="radio-label">Regular fit</label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" name="fit" value="Long-sleeves" id="fit-Long">
+                            <label for="fit-Long" class="radio-label">Oversized</label>
+                        </div> -->
+                    </div>
+                    <div class="save-world">
+                        <input type="checkbox" name="save-world" id="save-world-check">
+                        <h1 class="save">Do you want to save our world? </h1>
+                        <h2 class="must-read">Press check to get our certification mark on your shirt as a way to
+                            support carbon credits in manufacturing</h2>
+                    </div>
+                </div>
+                <!-- Form: Part 1 -->
+
+                <!-- Form: Part 2 -->
+                <div class="option-part" id="stage-4">
+                    <h4 class="progress"><span>Step 3 of 3</span> : Product Design</h4>
+                    <h1 class="product-name">Product Name</h1>
+                    <div class="size-amount-group">
+                        <table>
+                            <thead class="size-amount-header">
+                                <td>Size</td>
+                                <td>Amount</td>
+                                <td>Length / Chest / Shoulder (Inch)</td>
+                            </thead>
+                            <tbody class="size-amount-body">
+                                <!-- <tr class="size-amount-row">
+                                    <td>
+                                        <div class="size">XS</div>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="amount-xs" id="amount-xs" class="amount-input" placeholder="Amount">
+                                    </td>
+                                    <td>
+                                        <h3 class="LCS-inch">29 / 42 / 17.5</h3>
+                                    </td>
+                                </tr>
+                                <tr class="size-amount-row">
+                                    <td>
+                                        <div class="size">S</div>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="amount-s" id="amount-s" class="amount-input" placeholder="Amount">
+                                    </td>
+                                    <td>
+                                        <h3 class="LCS-inch">29 / 42 / 17.5</h3>
+                                    </td>
+                                </tr>
+                                <tr class="size-amount-row">
+                                    <td>
+                                        <div class="size">M</div>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="amount-m" id="amount-m" class="amount-input" placeholder="Amount">
+                                    </td>
+                                    <td>
+                                        <h3 class="LCS-inch">29 / 42 / 17.5</h3>
+                                    </td>
+                                </tr>
+                                <tr class="size-amount-row">
+                                    <td>
+                                        <div class="size">L</div>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="amount-l" id="amount-l" class="amount-input" placeholder="Amount">
+                                    </td>
+                                    <td>
+                                        <h3 class="LCS-inch">29 / 42 / 17.5</h3>
+                                    </td>
+                                </tr>
+                                <tr class="size-amount-row">
+                                    <td>
+                                        <div class="size">XL</div>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="amount-xl" id="amount-xl" class="amount-input" placeholder="Amount">
+                                    </td>
+                                    <td>
+                                        <h3 class="LCS-inch">29 / 42 / 17.5</h3>
+                                    </td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                
+                    </div>
+                </div>
+                <!-- Form: Part 2 -->
+        
+            </form>
+        </div>
+
+        <div class="step-btn-group">
+            <button type="button" id="prev-step-btn">Back</button>
+            <button type="button" id="next-step-btn">Next</button>
+            
+            {% if isShop == 0%}
+            <button type="submit" id="order-btn">Add to cart</button>
+            {% else %}
+            {% endif %}
+        </div>
+        
+    </div>
+    <!-- Product  -->
+
+
+    <!-- review section -->
+    <div class="review-group">
+        <div class="review-header">
+            <div class="over-all">
+                <h1 class="score"><span class="shop-score">4.5</span> of 5.0</h1>
+            </div>
+            <div class="get-review-type">
+                <button type="button" class="review-type-btn current-type">All</button>
+                <button type="button" class="review-type-btn">5 Stars</button>
+                <button type="button" class="review-type-btn">4 Stars</button>
+                <button type="button" class="review-type-btn">3 Stars</button>
+                <button type="button" class="review-type-btn">2 Stars</button>
+                <button type="button" class="review-type-btn">1 Star</button>
+            </div>
+        </div>
+
+        <div class="review-contents">
+
+            <div class="review">
+                <div class="user-logo"></div>
+                <h1 class="user-name">Username</h1>
+                <h2 class="review-date">2022-11-03 23:32</h2>
+                <h4 class="review-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod
+                    tempor
+                    incididunt ut
+                    laboreUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                    commodo conDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatu
+                    Excepteur sint occaecat cupidatat non proident, sunt in</h4>
+
+                <!-- like btn -->
+            </div>
+
+            <div class="review">
+                <div class="user-logo"></div>
+                <h1 class="user-name">Username</h1>
+                <h2 class="review-date">2022-11-03 23:32</h2>
+                <h4 class="review-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod
+                    tempor
+                    incididunt ut
+                    laboreUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                    commodo conDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatu
+                    Excepteur sint occaecat cupidatat non proident, sunt in</h4>
+            </div>
+
+            <div class="review">
+                <div class="user-logo"></div>
+                <h1 class="user-name">Username</h1>
+                <h2 class="review-date">2022-11-03 23:32</h2>
+                <h4 class="review-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod
+                    tempor
+                    incididunt ut
+                    laboreUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                    commodo conDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatu
+                    Excepteur sint occaecat cupidatat non proident, sunt in</h4>
+            </div>
+
+        </div>
+    </div>
+    <!-- review section -->
+</div>
+<!-- Container -->
+
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="crossorigin="anonymous"></script>
+<script src="/static/js/library/fabric/fabric@5.3.0_dist_fabric.min.js"></script>
+<script src="/static/js/library/dom-to-image.js"></script>
+<script src="/static/js/product.js"></script>
+{% endblock %}
